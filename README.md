@@ -1,4 +1,8 @@
-## Hi there 👋
+# Personal Website
+
+## Preview
+
+![preview](https://github.com/user-attachments/assets/a6bb2f6b-bb8f-4876-bf7a-d87ffea713e5)
 
 <!--
 **motexture/motexture** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -11,6 +15,5 @@ Here are some ideas to get you started:
 - 🤔 I’m looking for help with ...
 - 💬 Ask me about ...
 - 📫 How to reach me: ...
-- 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
