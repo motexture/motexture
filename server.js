@@ -29,7 +29,7 @@ Sono anche disponibile per consulenze personalizzate, per aiutarti a scoprire co
 const endPoint = 'http://localhost:1234/v1/chat/completions';
 const embeddingsEndPoint = 'http://localhost:1234/v1/embeddings';
 const app = express();
-const port = 3000;  // Changed to non-privileged port
+const port = 3000;
 
 const limiter = rateLimit({
     windowMs: 3 * 60 * 60 * 1000,
@@ -71,7 +71,7 @@ app.post('/api/generate', async (req, res) => {
         const requestBody = {
             model: modelName,
             messages: formattedMessage,
-            stream: true  // Enable streaming in request
+            stream: true
         };
 
         const response = await fetch(endPoint, {
@@ -84,21 +84,18 @@ app.post('/api/generate', async (req, res) => {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        // Set response headers to ensure the client treats it as a stream
-        res.setHeader('Content-Type', 'application/x-ndjson'); // NDJSON content type for streaming
+        res.setHeader('Content-Type', 'application/x-ndjson');
         res.setHeader('Transfer-Encoding', 'chunked');
 
-        // Stream each chunk as NDJSON
         response.body.on('data', (chunk) => {
             const data = chunk.toString().trim();
             if (data) {
-                // Wrap each chunk in a JSON object with a newline at the end
                 res.write(`${JSON.stringify({ response: data })}\n`);
             }
         });
 
         response.body.on('end', () => {
-            res.end(); // Close the response once the stream is complete
+            res.end();
         });
 
         response.body.on('error', (err) => {
@@ -131,9 +128,8 @@ app.post('/api/embeddings', async (req, res) => {
 
         const responseData = await response.json();
 
-        // Extract the embedding array from responseData
         const embedding = responseData.data[0].embedding;
-        res.json({ embedding }); // Send back only the embedding array
+        res.json({ embedding });
     } catch (error) {
         console.error('Error in /api/embeddings:', error);
         res.status(500).json({ error: 'Internal Server Error' });
