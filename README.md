@@ -2,7 +2,11 @@
 
 ## Preview
 
+Sito web che presenta i miei diversi servizi professionali offerti tramite un'interfaccia LLM.
+
 ![preview](https://github.com/user-attachments/assets/a6bb2f6b-bb8f-4876-bf7a-d87ffea713e5)
+
+
 
 <!--
 **motexture/motexture** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
