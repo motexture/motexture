@@ -2,7 +2,7 @@
 
 ## Preview
 
-Sito web che presenta i miei diversi servizi professionali offerti tramite un'interfaccia LLM.
+Codice sorgente del mio sito web che presenta i miei diversi servizi professionali offerti tramite un'interfaccia LLM.
 
 ![preview](https://github.com/user-attachments/assets/a6bb2f6b-bb8f-4876-bf7a-d87ffea713e5)
 
