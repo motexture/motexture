@@ -1,0 +1,27 @@
+{
+  "name": "motexture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/motexture/motexture.git"
+  },
+  "author": "motexture",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/motexture/motexture/issues"
+  },
+  "homepage": "https://github.com/motexture/motexture#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "node-fetch": "^3.3.2"
+  }
+}

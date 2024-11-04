@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>motexture - Soluzioni AI Personalizzate</title>
+    <link rel="stylesheet" href="./styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/prism.min.js"></script>
+</head>
+<body>
+    <canvas width="500" height="200" id="background">
+    </canvas>
+    <div id="content-wrapper">
+        <div id="title">
+            <h1 id="typewriter"></h1>
+        </div>
+        <div id="canvas-container"></div>
+        <div id="terminal">
+            <ul id="chat"></ul>
+            <div id="input-line">
+                <span id="prompt">></span>
+                <input type="text" id="input" placeholder="">
+                <button class="button send-button" id="input-button">Invia</button>
+            </div>
+            <div id="interactive-buttons-container">
+                <button class="button interactive-button" id="info-button">Chi sono</button>
+                <button class="button interactive-button" id="services-button">I miei servizi</button>
+            </div>
+        </div>
+        <!-- Add this inside your <body> tag -->
+        <a style="display: none;" target="_blank" href="https://wa.me/3914547930" class="whatsapp-icon">
+            <!-- Use an <img> tag for an image or <i> for a Font Awesome icon -->
+            <img src="resources/images/icons8-whatsapp-48.png" alt="WhatsApp">
+            <!-- If using Font Awesome, it might look like this: <i class="fa fa-whatsapp"></i> -->
+        </a>
+        <footer>
+            <p>&copy; 2023 motexture.com - Tutti i diritti riservati</p>
+            <a href="javascript:void(0)" id="privacy-policy-link">Privacy Policy</a> - <a href="javascript:void(0)" id="contact-us-button">Contattami</a>
+            <div id="privacy-policy-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Informativa sulla Privacy di motexture.com</h2>
+
+                    <h3>1. Introduzione</h3>
+                    <p>Benvenuti alla politica sulla privacy di motexture.com. motexture.com si impegna a proteggere la vostra privacy e a garantire che i vostri dati personali siano protetti. Questa politica sulla privacy spiega come trattiamo i dati personali quando utilizzate il nostro sito web, [motexture.com].</p>
+
+                    <h3>2. Dati che raccogliamo</h3>
+                    <p>Quando visitate il nostro sito web, possiamo raccogliere i seguenti dati:
+                    <ul>
+                        <li>Dati di identificazione personale (nome, indirizzo email, numero di telefono, ecc.).</li>
+                        <li>Informazioni di navigazione (log del server, indirizzo IP, ecc.).</li>
+                    </ul>
+                    </p>
+
+                    <h3>3. Come utilizziamo i vostri dati</h3>
+                    <p>Utilizziamo i vostri dati per:
+                    <ul>
+                        <li>Fornire i nostri servizi.</li>
+                        <li>Migliorare la vostra esperienza sul nostro sito.</li>
+                        <li>Comunicare con voi, per esempio, rispondendo alle vostre richieste.</li>
+                        <li>Finesse di marketing, solo se avete dato il consenso.</li>
+                    </ul>
+                    </p>
+
+                    <h3>4. Condivisione dei dati</h3>
+                    <p>Non condividiamo i vostri dati personali con terzi, tranne che in casi specifici, come:
+                    <ul>
+                        <li>Per adempiere a un obbligo legale.</li>
+                        <li>Per fornire un servizio richiesto, come la consegna di un prodotto.</li>
+                    </ul>
+                    </p>
+
+                    <h3>5. Conservazione dei dati</h3>
+                    <p>Conserviamo i vostri dati personali per il tempo strettamente necessario a realizzare gli scopi per cui sono stati raccolti.</p>
+
+                    <h3>6. I vostri diritti</h3>
+                    <p>Avete il diritto di:
+                    <ul>
+                        <li>Richiedere l'accesso ai vostri dati personali.</li>
+                        <li>Richiedere la correzione dei vostri dati personali.</li>
+                        <li>Richiedere la cancellazione dei vostri dati personali.</li>
+                        <li>Opporsi al trattamento dei vostri dati personali.</li>
+                        <li>Richiedere la limitazione del trattamento dei vostri dati personali.</li>
+                    </ul>
+                    </p>
+
+                    <h3>7. Sicurezza dei dati</h3>
+                    <p>Adottiamo misure di sicurezza per proteggere i vostri dati personali da accessi non autorizzati, alterazioni, divulgazione o distruzione.</p>
+
+                    <h3>8. Contatti</h3>
+                    <p>Per qualsiasi domanda sulla presente informativa sulla privacy, potete contattarci all'indirizzo email: [tuo email].</p>
+
+                    <h3>9. Modifiche alla nostra politica sulla privacy</h3>
+                    <p>Ci riserviamo il diritto di modificare questa politica sulla privacy in qualsiasi momento. Qualsiasi cambiamento sarà pubblicato su questa pagina.</p>
+                    <p>Data dell'ultima revisione: 9 Dicembre 2023.</p>
+
+                    <h3>10. Uso di LocalStorage per il Miglioramento dell'Esperienza Utente</h3>
+                    <h4>10.1 Finalità dell'uso di LocalStorage</h4>
+                    <p>Il nostro sito web utilizza LocalStorage, una tecnologia di archiviazione web, per memorizzare localmente i frammenti di dati relativi alle interazioni degli utenti con il nostro modello di intelligenza artificiale, wizardlm-13b. Questo approccio ci permette di conservare le informazioni necessarie per personalizzare e migliorare l'esperienza dell'utente durante le visite successive al nostro sito.</p>
+
+                    <h4>10.2 Cosa Memorizziamo</h4>
+                    <p>LocalStorage viene utilizzato per conservare i cosiddetti 'embeddings', ovvero rappresentazioni codificate delle interazioni precedenti degli utenti con il nostro modello wizardlm-13b. Questi dati aiutano il modello a fornire risposte e interazioni più pertinenti e contestualizzate, aumentando l'efficacia e la personalizzazione del servizio offerto.</p>
+
+                    <h4>10.3 Controllo e Gestione dei Dati</h4>
+                    <p>
+                    Gli utenti hanno pieno controllo sui dati memorizzati in LocalStorage. Potete visualizzare, modificare o cancellare questi dati in qualsiasi momento attraverso le impostazioni del vostro browser. Non utilizziamo LocalStorage per raccogliere dati personali sensibili o per condividere informazioni con terze parti.
+                    </p>
+
+                    <h4>10.4 Sicurezza e Privacy</h4>
+                    <p>I dati memorizzati in LocalStorage sono conservati localmente sul dispositivo dell'utente e non vengono trasmessi ai nostri server. Adottiamo misure di sicurezza adeguate per proteggere i dati memorizzati e garantire la privacy degli utenti.</p>
+                </div>
+            </div>
+            <div id="contact-us-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="contact-us-close">&times;</span>
+                    <h2>Contattami</h2>
+                    <form id="contact-form" action="/contact" method="post">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required><br><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br><br>
+                        <label for="message">Messaggio:</label>
+                        <textarea id="message" name="message" required></textarea><br><br>
+                        <input class="button interactive-button" type="submit" value="Invia">
+                    </form>
+                    <div id="thank-you-message" style="display: none;">
+                        <p>Grazie per avermi contattato! Ti risponderò il prima possibile.</p>
+                    </div>                    
+                </div>
+            </div>            
+        </footer>
+    </div>
+    <script type="module" src="./js/mesh.js"></script>
+    <script src="./js/chat.js"></script>
+    <script src="./js/matrix.js"></script>
+    <script src="./js/title.js"></script>
+    <script src="./js/privacy-policy.js"></script>
+    <script src="./js/contact-us.js"></script>
+</body>
+</html>

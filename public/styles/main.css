@@ -1,0 +1,346 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    background-color: #000; /* Optional: background color */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Courier New', monospace;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+p, span {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+pre {
+    position: relative; /* Ensure this is set for correct positioning of the button */
+    background-color: #f5f5f5;
+    border: 1px solid #fff;
+    border-left: 3px solid #03A062;
+    padding: 10px;
+    margin: 20px !important;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+}
+
+pre button {
+    position: absolute;
+    top: 5px; /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: #03A062; /* Terminal-like text color */
+    border: 1px solid #03A062; /* Border color similar to text */
+    border-radius: 3px;
+    padding: 3px 6px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace; /* Monospace font for terminal style */
+    font-size: 0.8em;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover */
+}
+
+pre button:hover {
+    background-color: #03A062; /* Brighter color on hover */
+    color: #000; /* Contrast color for text on hover */
+}
+
+pre button:active {
+    background-color: #007399; /* Slightly darker color on click */
+}
+
+code {
+    white-space: pre;
+}
+
+footer {
+    z-index: 2;
+    margin-top: 20px;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #222;
+    color: #fff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #03A062;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.button {
+    top: 5px; /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    color: #03A062; /* Terminal-like text color */
+    border: 1px solid #03A062; /* Border color similar to text */
+    border-radius: 3px;
+    padding: 3px 6px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace; /* Monospace font for terminal style */
+    font-size: 0.8em;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover */
+}
+.button:hover {
+    background-color: #03A062; /* Brighter color on hover */
+    color: #000; /* Contrast color for text on hover */
+}
+
+.button:active {
+    background-color: #007399; /* Slightly darker color on click */
+}
+
+.send-button {
+    text-transform: uppercase;
+}
+
+.interactive-button {
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #222; /* Fitting your theme's colors */
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #03A062;
+    width: 60%; /* Could be more or less, depending on screen size */
+    color: white; /* Text color */
+    position: relative;
+    text-align: left;
+}
+
+.close {
+    color: #03A062;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #007399;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.whatsapp-icon {
+    position: fixed;
+    top: 10%;
+    right: 35%;
+    z-index: 1;
+}
+
+.whatsapp-icon img {
+    width: 48px;
+    height: auto;
+}
+
+#background {
+    position: fixed; /* or 'absolute' */
+    top: 0;
+    left: 0;
+    z-index: 2; /* ensures it stays in the background */
+    width: 100vw; /* full viewport width */
+    height: 100vh; /* full viewport height */
+    opacity: 0.2;
+}
+
+#title {
+    display: flex;
+    height: 100px;
+}
+
+#typewriter span{
+    font-family: 'Courier New', monospace;
+    font-size: 30px;
+    color: #03A062;
+}
+
+#content-wrapper {
+    position: relative;
+    z-index: 10; /* higher than canvas */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+#canvas-container {
+    width: 100%;
+    height: 30%;
+}
+
+/* Terminal styles */
+#terminal {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 20px;
+    width: 50%;
+    color: #03A062;
+    height: 30%;
+}
+
+#chat {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 25px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Adjust as needed */
+    overflow-y: auto;
+}
+
+/* Custom Scrollbar Styles */
+#chat::-webkit-scrollbar {
+    width: 8px; /* Adjust width of scrollbar */
+}
+
+#chat::-webkit-scrollbar-track {
+    background: #000; /* Background of scrollbar track */
+}
+
+#chat::-webkit-scrollbar-thumb {
+    background: #03A062; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+#chat::-webkit-scrollbar-thumb:hover {
+    background: #0094cc; /* Color of the scrollbar thumb on hover */
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #03A062;
+}
+
+#prompt {
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: #03A062;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#input {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    flex: 1;
+    color: #03A062;
+    background-color: #00000000;
+    border: none;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+#input::placeholder {
+    color: #03A062; /* Replace [Your Desired Color] with your chosen color */
+    opacity: 1; /* This ensures the color is not faded */
+}
+
+#input:focus {
+    outline: none;
+}
+
+#interactive-buttons-container {
+    display: flex;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: center;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+}
+
+#contact-form label {
+    color: #03A062; /* Your theme's text color */
+    margin-bottom: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+#contact-form input[type=text], 
+#contact-form input[type=email], 
+#contact-form textarea {
+    width: 100%; /* Adjust as necessary */
+    padding: 8px;
+    margin-bottom: 10px;
+    background-color: #000; /* Background color */
+    color: #03A062; /* Text color */
+    border: 1px solid #03A062; /* Border color */
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+#contact-form textarea {
+    height: 100px; /* Adjust height as needed */
+    resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+@media (max-width: 768px) {
+    .modal-content {
+        width: 80%; /* Adjust width for smaller screens */
+        margin-top: 10%; /* Less margin at the top */
+    }
+    .whatsapp-icon {
+        top: 10%;
+        right: 10%;
+    }
+    #chat {
+        font-size: 0.9em;
+    }
+    #typewriter span{
+        font-size: 0.7em;
+    }
+    #terminal {
+        font-size: 0.9em;
+        width: 90%;
+    }
+    #input {
+        font-size: 0.9em;
+    }
+}
